@@ -3,3 +3,4 @@ Flask-Cors==3.0.10
 pandas==1.5.3
 scikit-learn==1.2.2
 instaloader==4.9.6
+gunicorn==20.1.0
