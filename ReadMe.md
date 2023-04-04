@@ -1,6 +1,6 @@
 # InstagramFakeDetect API 👁️ 
 
-## ? About
+## About 🌟
 
 Machine Learning **Flask** API using DescionTree Classifier to predict if a account is Fake or Not
 
