@@ -46,4 +46,8 @@ Machine Learning **Flask** API using DescionTree Classifier to predict if a acco
 8. `username_digit_count` - Number of digits present in account username.
 9. `is_fake` - True, if account is a spam/fake account, False otherwise
 
+### Live 🔗 : https://instareact.akshayk.dev/
+
 ## Thank you For your time  🚀 
+
+
