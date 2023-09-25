@@ -96,22 +96,7 @@ def get_followers(res,req):
         username=req.get_parameter(0)
         followers = client.get_followers(username)
 
-        # Define a function to fetch follower profile pictures and IDs
-        def get_follower_info(follower):
-            user_id = follower.pk
-            profile_pic_url = follower.profile_pic_url
-            return user_id, profile_pic_url
-
-        # Fetch follower info for all followers
-        follower_info_list = []
-        for follower in followers:
-            user_id, profile_pic_url = get_follower_info(follower)
-            follower_info_list.append({
-                'username': follower.username,
-                'user_id': user_id,
-                'profile_pic_url': profile_pic_url
-            })
-        res.cork_end(follower_info_list)
+        res.cork_end(followers)
      
     except Exception as e:
         res.cork_end(e)
@@ -148,7 +133,7 @@ def get_user_info(res,req):
         prediction = int(prediction[0])
 
         # Create a dictionary with the prediction result
-        result = {"prediction": prediction,"user":user_info}
+        result = {"prediction": prediction,"user":user }
         custom_headers = (
             ("Access-Control-Allow-Origin", "*"),  # CORS header to allow any origin
             ("Access-Control-Allow-Methods", "GET, POST, OPTIONS"),  # CORS header for allowed methods
