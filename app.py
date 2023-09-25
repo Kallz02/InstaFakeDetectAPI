@@ -75,13 +75,16 @@ def login(res,req):
     res.redirect(authorization_url)
 def authorized(res,req):
     code = req.get_query('code')
+    print(code)
     if code:
         # Exchange the code for an access token
         access_token = get_instagram_access_token(code)
-
+        print(access_token)
         if access_token:
             user_info = get_instagram_user_info(access_token)
+            print(user_info)
             jwt_token = generate_jwt_token(user_info)
+            print(jwt_token)
             res.cork_end(jwt_token)
 
     res.cork_end('Failed to authenticate with Instagram.')
