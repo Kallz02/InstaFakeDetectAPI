@@ -16,8 +16,6 @@ import jwt
 app = App()
 # Instagram API Credentials
 
-INSTAGRAM_USERNAME = "akshay.pranav.kalathil@gmail.com"
-INSTAGRAM_PASSWORD = "Krishna@123"
 
 CLIENT_ID = '615827887363040'
 CLIENT_SECRET = '6c8c670effec415f2f78f72a5c92dfa6'
@@ -155,6 +153,6 @@ app.get("/user/:username",get_user_info)
 
 
 # Run the Flask app
-app.listen(7860, lambda config: print("Listening on port http://localhost:%d now\n" % config.port))
+app.listen(5000, lambda config: print("Listening on port http://localhost:%d now\n" % config.port))
 app.run()
 
