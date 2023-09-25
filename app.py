@@ -11,11 +11,13 @@ with open('model.pkl', 'rb') as f:
 from socketify import App
 import requests
 import jwt
+
+
 app = App()
 # Instagram API Credentials
 
-INSTAGRAM_USERNAME = "inq.isitives@gmail.com"
-INSTAGRAM_PASSWORD = "inq.isitives@18"
+INSTAGRAM_USERNAME = "akshay.pranav.kalathil@gmail.com"
+INSTAGRAM_PASSWORD = "Krishna@123"
 
 CLIENT_ID = '615827887363040'
 CLIENT_SECRET = '6c8c670effec415f2f78f72a5c92dfa6'
