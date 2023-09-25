@@ -71,7 +71,7 @@ def generate_jwt_token(user_info):
 
 def login(res,req):
     # Redirect the user to Instagram's OAuth authorization URL
-    authorization_url = f'https://api.instagram.com/oauth/authorize/?client_id={CLIENT_ID}&redirect_uri={REDIRECT_URI}&response_type=code'
+    authorization_url = f'https://api.instagram.com/oauth/authorize/?client_id={CLIENT_ID}&redirect_uri={REDIRECT_URI}&scope=user_profile,user_media&response_type=code'
     res.redirect(authorization_url)
 def authorized(res,req):
     code = req.get_query('code')
