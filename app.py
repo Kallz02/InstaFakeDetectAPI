@@ -20,9 +20,9 @@ app = App()
 INSTAGRAM_USERNAME = os.environ.get("USER")
 
 INSTAGRAM_PASSWORD = os.environ.get("PASS")
-CLIENT_ID = '615827887363040'
-CLIENT_SECRET = '6c8c670effec415f2f78f72a5c92dfa6'
-REDIRECT_URI = 'http://localhost:5000/login/authorize'
+CLIENT_ID = '1042711987084094'
+CLIENT_SECRET = '2305b2e16fc676e708367f8c73566c4e'
+REDIRECT_URI = 'https://kallz02-instadetect.hf.space/login/authorize'
 INSTAGRAM_API_BASE_URL = 'https://api.instagram.com/v1/'
 # Create an Instagram client
 client = Client()
