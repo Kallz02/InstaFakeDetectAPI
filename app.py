@@ -85,6 +85,39 @@ def authorized(res,req):
             res.cork_end(jwt_token)
 
     res.cork_end('Failed to authenticate with Instagram.')
+
+
+def get_followers(res,req):
+    try:
+
+        username=req.get_parameter(0)
+        followers = client.get_followers(username)
+
+        # Define a function to fetch follower profile pictures and IDs
+        def get_follower_info(follower):
+            user_id = follower.pk
+            profile_pic_url = follower.profile_pic_url
+            return user_id, profile_pic_url
+
+        # Fetch follower info for all followers
+        follower_info_list = []
+        for follower in followers:
+            user_id, profile_pic_url = get_follower_info(follower)
+            follower_info_list.append({
+                'username': follower.username,
+                'user_id': user_id,
+                'profile_pic_url': profile_pic_url
+            })
+        res.cork_end(follower_info_list)
+     
+    except Exception as e:
+        res.cork_end(e)
+
+
+
+
+
+
 def get_user_info(res,req):
     try:
         # Get the user by username
@@ -130,9 +163,10 @@ def get_user_info(res,req):
         )
         res.send( {"error": f"An error occurred while processing the request: {str(e)}"}, status="400",headers=error_headers)
 app.get("/login",login)
-app.get("/login/authorized",authorized)
+app.get("/login/authorize",authorized)
 
 app.get("/user/:username",get_user_info)
+app.get("/get/:username",get_followers)
 # Define a route for the predict API
 # @app.route('/predict', methods=['POST'])
 # def predict():
