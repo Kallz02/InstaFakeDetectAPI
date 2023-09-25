@@ -22,4 +22,4 @@ EXPOSE 8080
 EXPOSE 5000
 
 # Use Gunicorn as the WSGI server
-CMD ["python3","-m" ,"socketify" ,"app:app", "-w", "4", "-b", "0.0.0.0:5000"]
+CMD ["python3","-m" ,"socketify" ,"app:app", "-w", "4", "-b", "0.0.0.0:7860"]
