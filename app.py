@@ -17,6 +17,8 @@ app = App()
 # Instagram API Credentials
 
 
+INSTAGRAM_USERNAME = "akshay.pranav.kalathil@gmail.com"
+INSTAGRAM_PASSWORD = "Krishna@123"
 CLIENT_ID = '615827887363040'
 CLIENT_SECRET = '6c8c670effec415f2f78f72a5c92dfa6'
 REDIRECT_URI = 'http://localhost:5000/login/authorize'
