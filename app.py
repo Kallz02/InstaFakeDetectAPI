@@ -17,8 +17,10 @@ app = App()
 # Instagram API Credentials
 
 
+# INSTAGRAM_USERNAME = os.environ.get("USER")
 INSTAGRAM_USERNAME = os.environ.get("USER")
 
+# INSTAGRAM_PASSWORD = os.environ.get("PASS")
 INSTAGRAM_PASSWORD = os.environ.get("PASS")
 CLIENT_ID = '1042711987084094'
 CLIENT_SECRET = '2305b2e16fc676e708367f8c73566c4e'
@@ -74,7 +76,7 @@ def login(res,req):
     authorization_url = f'https://api.instagram.com/oauth/authorize/?client_id={CLIENT_ID}&redirect_uri={REDIRECT_URI}&scope=user_profile,user_media&response_type=code'
     res.redirect(authorization_url)
 def authorized(res,req):
-    code = req.get_query('code')
+    code = req.get_query("code")
     print(code)
     if code:
         # Exchange the code for an access token
