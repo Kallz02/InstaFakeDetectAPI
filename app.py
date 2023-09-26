@@ -152,7 +152,7 @@ def get_user_info(res,req):
         prediction = int(prediction[0])
 
         # Create a dictionary with the prediction result
-        result = {"prediction": prediction,"user":user_info ,"pp":user.profile_pic_url  }
+        result = {"prediction": prediction,"user":user_info ,"pp":user.profile_pic_url , "username":username  }
         custom_headers = (
             ("Access-Control-Allow-Origin", "*"),  # CORS header to allow any origin
             ("Access-Control-Allow-Methods", "GET, POST, OPTIONS"),  # CORS header for allowed methods
