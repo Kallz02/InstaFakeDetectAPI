@@ -9,7 +9,7 @@ RUN apt-get install -y libuv1-dev zlib1g
 COPY requirements.txt .
 
 # Install any needed packages specified in requirements.txt
-RUN pip install --trusted-host pypi.python.org -r requirements.txt
+RUN pip install --no-cache-dir --trusted-host pypi.python.org -r requirements.txt
 
 # Copy the rest of the application code into the container at /app
 COPY . /app

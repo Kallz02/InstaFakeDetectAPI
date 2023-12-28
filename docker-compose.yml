@@ -3,6 +3,8 @@ services:
   app:
     build:
       context: .
-      dockerfile: ./DockerFile
+      dockerfile: ./Dockerfile
     ports:
-      - "5000:5000"
+      - "7860:7860"
+    env_file:
+      - ".env"
